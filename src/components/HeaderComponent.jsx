@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 
+
 function HeaderComponent(){
   // font-thin: Fonte mais fina.
   // font-light: Fonte leve.
