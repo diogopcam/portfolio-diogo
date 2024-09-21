@@ -3,6 +3,7 @@ import HeaderComponent from '../components/HeaderComponent'
 import ProjectFrameComponent from '../components/ProjectFrameComponent';
 import MrImage from '../images/myrecords.png'; // Caminho relativo à imagem local
 import PodioImage from '../images/podio.png'; // Caminho relativo à imagem local
+import {motion} from "framer-motion";
 
 function ProjectsPage(){
   const myrecords = {
@@ -26,17 +27,23 @@ function ProjectsPage(){
   };
   
   return (
-  <div className="bg-black text-white flex flex-col h-screen">
-    <HeaderComponent/>
-      <p className='font-montserrat text-8xl pl-7 p-12'>
-        PROJETOS
-      </p>
-      {/* Esse container deve conter os elementos dos projetos. */}
-      <div className='h-[100%] w-[100%] flex flex-row justify-between pl-9 pr-9'>
-        <ProjectFrameComponent project={myrecords}/>
-        <ProjectFrameComponent project={podio}/>
+    <motion.div
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+    >
+      <div className="bg-black text-white flex flex-col h-screen">
+        <HeaderComponent/>
+          <p className='font-montserrat text-8xl pl-7 p-12'>
+            PROJETOS
+          </p>
+          {/* Esse container deve conter os elementos dos projetos. */}
+          <div className='h-[100%] w-[100%] flex flex-row justify-between pl-9 pr-9'>
+            <ProjectFrameComponent project={myrecords}/>
+            <ProjectFrameComponent project={podio}/>
+          </div>
       </div>
-  </div>
+    </motion.div>
   );
 }
 
