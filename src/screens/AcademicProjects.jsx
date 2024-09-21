@@ -1,0 +1,18 @@
+import React from 'react';
+import '../index.css';
+import HeaderComponent from '../components/HeaderComponent';
+// import BackgroundTwo from './images/black2.jpeg';
+
+
+function AcademicProjects() {
+  return (
+    <div className="bg-[url('/Users/dpcam/Desktop/portfolio-diogo/src/images/360_F_227215665_8HbqJ2T9djgJU4mkLJJEmesp5XYhlUTk.jpg')] bg-cover text-white flex flex-col justify-between h-screen p-4">
+        <HeaderComponent/>
+        <p className='text-9xl pb-10 pl-10'>
+          PROJETOS ACADEMICOS
+        </p>
+    </div>
+  );
+}
+
+export default AcademicProjects;
