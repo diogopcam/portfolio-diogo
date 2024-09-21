@@ -32,7 +32,7 @@ function ProjectsPage(){
       animate={{opacity: 1}}
       exit={{opacity: 0}}
     >
-      <div className="bg-[url('/Users/dpcam/Desktop/portfolio-diogo/src/assets/images/360_F_227215665_8HbqJ2T9djgJU4mkLJJEmesp5XYhlUTk.jpg')] bg-cover text-white flex flex-col justify-between h-screen p-4">
+      <div className="bg-[url('https://i.imgur.com/J0sCj2O.jpg')] bg-cover text-white flex flex-col justify-between h-screen p-4">
         <HeaderComponent/>
         <p className='text-8xl pt-10 pb-9 pl-9'>
           PROJETOS
