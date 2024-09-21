@@ -32,16 +32,15 @@ function ProjectsPage(){
       animate={{opacity: 1}}
       exit={{opacity: 0}}
     >
-      <div className="bg-[url('/Users/dpcam/Desktop/portfolio-diogo/src/images/360_F_227215665_8HbqJ2T9djgJU4mkLJJEmesp5XYhlUTk.jpg')] bg-cover text-white flex flex-col justify-between h-screen">
+      <div className="bg-[url('/Users/dpcam/Desktop/portfolio-diogo/src/images/360_F_227215665_8HbqJ2T9djgJU4mkLJJEmesp5XYhlUTk.jpg')] bg-cover text-white flex flex-col justify-between h-screen p-4">
         <HeaderComponent/>
-          <p className='font-montserrat text-8xl pl-7 p-12'>
-            PROJETOS
-          </p>
-          {/* Esse container deve conter os elementos dos projetos. */}
-          <div className='h-[100%] w-[100%] flex flex-row justify-between pl-9 pr-9'>
-            <ProjectFrameComponent project={myrecords}/>
-            <ProjectFrameComponent project={podio}/>
-          </div>
+        <div class="pl-11 pr-11 h-[60%] w-[100%] flex items-center gap-20">
+          <ProjectFrameComponent project={myrecords}/>
+          <ProjectFrameComponent project={podio}/>
+        </div>
+        <p className='text-9xl pb-10 pl-10'>
+          PROJETOS
+        </p>
       </div>
     </motion.div>
   );

@@ -3,7 +3,7 @@ import React from "react";
 function ProjectFrameComponent({ project }) {
   return (
     <div
-      className="relative bg-white h-[70%] w-[47%] text-black overflow-hidden"
+      className="relative bg-white h-[80%] w-[100%] text-black overflow-hidden rounded-xl"
       style={{
         backgroundImage: `url(${project.image})`, // A imagem de capa do projeto
         backgroundSize: "cover",
