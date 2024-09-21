@@ -32,7 +32,7 @@ function ProjectsPage(){
       animate={{opacity: 1}}
       exit={{opacity: 0}}
     >
-      <div className="bg-black text-white flex flex-col h-screen">
+      <div className="bg-[url('/Users/dpcam/Desktop/portfolio-diogo/src/images/360_F_227215665_8HbqJ2T9djgJU4mkLJJEmesp5XYhlUTk.jpg')] bg-cover text-white flex flex-col justify-between h-screen">
         <HeaderComponent/>
           <p className='font-montserrat text-8xl pl-7 p-12'>
             PROJETOS
