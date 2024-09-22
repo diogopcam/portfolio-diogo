@@ -6,9 +6,9 @@ import { motion } from 'framer-motion';
 function LandingPage() {
   return (
     <motion.div
-    initial={{opacity: 0}}
-    animate={{opacity: 1}}
-    exit={{opacity: 0}}
+    initial={{ x: '80%' }}
+    animate={{ x: 0}}
+    transition={{ duration: 0.5 }}
     >
     <div className="bg-[url('https://i.imgur.com/J0sCj2O.jpg')] bg-cover text-black flex flex-col justify-between h-screen p-4">
         <HeaderComponent/>

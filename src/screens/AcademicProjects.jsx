@@ -9,7 +9,7 @@ function AcademicProjects() {
     <div className="bg-[url('https://i.imgur.com/J0sCj2O.jpg')] bg-cover text-white flex flex-col justify-between h-screen p-4">
         <HeaderComponent/>
         <p className='text-9xl pb-10 pl-10'>
-          PROJETOS ACADEMICOS
+          PROJETOS
         </p>
     </div>
   );
