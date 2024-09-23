@@ -11,9 +11,9 @@ function ProjectFrameComponent({ project }) {
       }}
     >
       {/* Informações do projeto (visíveis ao hover) */}
-      <div className="absolute inset-0 bg-white bg-opacity-70 p-4 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center">
+      <div className="absolute justify-around text-white inset-0 bg-black bg-opacity-70 p-4 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col">
         <h2 className="text-2xl font-bold">{project.name}</h2>
-        <p className="mt-2 text-center">{project.description}</p>
+        <p className="mt-2">{project.description}</p>
         <div className="mt-4">
           <a
             href={project.repository.front}
