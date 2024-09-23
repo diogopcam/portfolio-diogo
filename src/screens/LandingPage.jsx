@@ -13,7 +13,7 @@ function LandingPage() {
     <div className="bg-[url('https://i.imgur.com/J0sCj2O.jpg')] bg-cover text-black flex flex-col justify-between h-screen p-4">
         <HeaderComponent/>
         <p className='text-white text-9xl pb-10 pl-10'>
-          PORTFÓLIO
+          BEM VINDO
         </p>
     </div>
     </motion.div>
