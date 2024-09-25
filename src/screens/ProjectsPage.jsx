@@ -28,10 +28,11 @@ function ProjectsPage(){
   
   return (
     <motion.div
-    initial={{ x: '80%' }}
-    animate={{ x: 0}}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
     transition={{ duration: 0.5 }}
-    >
+  >
       <div className="bg-[url('https://i.imgur.com/J0sCj2O.jpg')] bg-cover text-white flex flex-col justify-between h-screen p-4">
         <HeaderComponent/>
         <p className='text-8xl pt-10 pb-9 pl-9'>
