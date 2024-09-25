@@ -14,7 +14,7 @@ function HeaderComponent(){
   // font-black: Fonte muito negrito.
 
   return (
-    <div className='pl-10 pr-10 bg-transparent text-white text-2xl font-thin h-[12%] w-[100%] flex flex-row items-center align-center justify-center justify-between'> 
+    <div className='pl-10 pr-10 bg-black text-white text-2xl font-thin h-[10vh] w-[100%] flex flex-row items-center align-center justify-center justify-between'> 
       <Link to='/' className="hover:underline"> SOBRE MIM </Link>
       <Link to='/projects-page' className="hover:underline"> PROJETOS </Link>
     </div>
