@@ -4,6 +4,8 @@ import HeaderComponent from '../components/HeaderComponent';
 import ProjectFrameComponent from '../components/ProjectFrameComponent';
 import MrImage from '../assets/images/myrecords.png'; // Caminho relativo à imagem local
 import PodioImage from '../assets/images/podio.png'; // Caminho relativo à imagem local
+import TechIcons from '../components/TechIcons';
+
 import { motion } from 'framer-motion';
 
 function HomePage() {
@@ -66,29 +68,54 @@ function HomePage() {
         
         {/* Landing Page */}
         <div className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'>
-            <p className="w-[80vh] text-xl text"> 
+            <p className="w-[80vh] text-xl text font-thin"> 
                 Estudante do 4º semestre de Engenharia de Software na PUCRS, sou um aspirante a desenvolvedor full-stack com experiência prática em React, React Native e Java. Busco minha primeira experiência profissional como desenvolvedor para aprimorar minhas habilidades e criar soluções criativas e escaláveis.
             </p>
-            <p className='text-9xl pb-10 pl-10'>
-                DIOGO PESSIN
+            <p className='text-8xl pb-10 pl-10'>
+                DIOGO PESSIN CAMARGO
             </p>
         </div>
 
-      {/* Projects Page */}
-    
-            {/* <p className="w-[80vh] text-xl text"> 
-                Estudante do 4º semestre de Engenharia de Software na PUCRS, sou um aspirante a desenvolvedor full-stack com experiência prática em React, React Native e Java. Busco minha primeira experiência profissional como desenvolvedor para aprimorar minhas habilidades e criar soluções criativas e escaláveis.
-            </p>
-            <p className='text-9xl pb-10 pl-10'>
-                DIOGO PESSIN
-            </p>
-        </div> */}
+        {/* {Trajetória acadêmica e profissional} */}
+        <div className='text-white text-center items-center'>
+          <p className='text-6xl'> TRAJETÓRIA ACADÊMICA E PROFISSIONAL </p>
+          <div className='flex flex-row justify-center gap-40'>
+            <div className='flex flex-col'> 
+              <p> Texto 1 </p>
+              <p> Texto 2 </p>
+            </div>
+            <div>
+              <p> Texto 2 </p>
+              <p> Texto 2 </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Minha trajetória */}
         <div className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14">
           <p className='text-8xl pb-9 pl-9'>PROJETOS</p>
-          <div className="flex flex-row h-[60%] w-[150vh] items-center gap-10 md:flex-row md:justify-center">
-            <ProjectFrameComponent project={myrecords} />
-            <ProjectFrameComponent project={podio} />
-          </div>
+            <div className="flex flex-row h-[60%] w-[150vh] items-center gap-10 md:flex-row md:justify-center">
+                <ProjectFrameComponent project={myrecords} />
+                <ProjectFrameComponent project={podio} />
+            </div>
+        </div>
+
+
+              {/* Projects Page */}
+        <div className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14">
+          <p className='text-8xl pb-9 pl-9'>Stack de tecnologias</p>
+            <div className="flex flex-row h-[60%] w-[150vh] items-center gap-10 md:flex-row md:justify-center">
+                <TechIcons />
+            </div>
+        </div>
+
+      {/* Projects Page */}
+        <div className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14">
+          <p className='text-8xl pb-9 pl-9'>PROJETOS</p>
+            <div className="flex flex-row h-[60%] w-[150vh] items-center gap-10 md:flex-row md:justify-center">
+                <ProjectFrameComponent project={myrecords} />
+                <ProjectFrameComponent project={podio} />
+            </div>
         </div>
     </div>
   );
