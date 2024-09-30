@@ -7,7 +7,9 @@ import PodioImage from '../assets/images/podio.png'; // Caminho relativo à imag
 import TechIcons from '../components/TechIcons';
 // import Thoughtworks from '../assets/trajectory-icons/thoughtworks.png';
 import semBarreirasImage from '../assets/trajectory-icons/sem-barreiras.png'; // Importando a imagem diretamente
-// import thoughtworksImage from '../assets/trajectory-icons/tw.png';
+
+import TrajectoryComponent from '../components/TrajectoryComponent';
+import thoughtworksImage from '../assets/trajectory-icons/tw.png';
 // import { motion } from 'framer-motion';
 
 function HomePage() {
@@ -37,11 +39,11 @@ function HomePage() {
     position: 'Desenvolvedor front-end - 03/2023 até 06/2023'
   };
 
-  // const thoughtworksImage = {
-  //   image: thoughtworksImage,
-  //   name: 'Thoughtworks',
-  //   position: 'Jovem Aprendiz na Thoughtworks - 06/2023 até 08/2024'
-  // };
+  const thoughtworks = {
+    image: thoughtworksImage,
+    name: 'Thoughtworks',
+    position: 'Jovem Aprendiz na Thoughtworks - 06/2023 até 08/2024'
+  }
 
   return (
     // Full page
@@ -65,16 +67,15 @@ function HomePage() {
         <div className='text-white text-center items-center'>
           <p className='text-6xl'> TRAJETÓRIA ACADÊMICA E PROFISSIONAL </p>
           <div className='flex flex-row justify-center gap-40'>
-            <div className='flex flex-row items-center justify-center border border-gray-300 p-4 shadow-md'>
-              <img src={semBarreirasImage} alt="Sem Barreiras" className="w-24 h-24 bg-white rounded-full" /> {/* Renderiza a imagem aqui */}
-            <div className='pl-4 flex text-left flex-col'>
-              <p> {sembarreiras.name} </p>
-              <p> {sembarreiras.position} </p>
-            </div>  
-            </div>
+            <TrajectoryComponent 
+              profile={thoughtworks}
+              imageSize="w-[20vh]" // Tamanho personalizado
+              border="border-white-500" // Cor da borda
+              bgColor='black'
+              borderRadius=''
+            />
             <div className='flex flex-col items-center'>
-              <p> Texto 2 </p>
-              <p> Texto 2 </p>
+              <TrajectoryComponent profile={sembarreiras} />
             </div>
           </div>
         </div>
@@ -94,15 +95,6 @@ function HomePage() {
           <p className='text-8xl pb-9 pl-9'>Stack de tecnologias</p>
             <div className="flex flex-row h-[60%] w-[150vh] items-center gap-10 md:flex-row md:justify-center">
                 <TechIcons />
-            </div>
-        </div>
-
-      {/* Projects Page */}
-        <div className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14">
-          <p className='text-8xl pb-9 pl-9'>PROJETOS</p>
-            <div className="flex flex-row h-[60%] w-[150vh] items-center gap-10 md:flex-row md:justify-center">
-                <ProjectFrameComponent project={myrecords} />
-                <ProjectFrameComponent project={podio} />
             </div>
         </div>
     </div>
