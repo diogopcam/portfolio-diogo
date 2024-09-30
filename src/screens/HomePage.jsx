@@ -84,13 +84,13 @@ function HomePage() {
             </div>
             <div className='flex flex-col items-center'>
             <p> Acadêmica </p>
-              <TrajectoryComponent profile={sembarreiras} />
-              <TrajectoryComponent 
+            <TrajectoryComponent 
                 profile={pucrs} 
                 imageSize="w-[15vh]" // Tamanho personalizado
                 border="border-white-500" // Cor da borda
                 bgColor='black'
                 borderRadius=''/>
+              <TrajectoryComponent profile={sembarreiras} />
             </div>
           </div>
         </div>
@@ -108,7 +108,7 @@ function HomePage() {
               {/* Projects Page */}
         <div className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14">
           <p className='text-8xl pb-9 pl-9'>Stack de tecnologias</p>
-            <div className="flex flex-row h-[60%] w-[150vh] items-center gap-10 md:flex-row md:justify-center">
+            <div className="flex flex-row w-[150vh] items-center md:flex-row md:justify-center">
                 <TechIcons />
             </div>
         </div>
