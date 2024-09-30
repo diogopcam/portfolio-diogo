@@ -5,12 +5,10 @@ import ProjectFrameComponent from '../components/ProjectFrameComponent';
 import MrImage from '../assets/images/myrecords.png'; // Caminho relativo à imagem local
 import PodioImage from '../assets/images/podio.png'; // Caminho relativo à imagem local
 import TechIcons from '../components/TechIcons';
-// import Thoughtworks from '../assets/trajectory-icons/thoughtworks.png';
 import semBarreirasImage from '../assets/trajectory-icons/sem-barreiras.png'; // Importando a imagem diretamente
-
 import TrajectoryComponent from '../components/TrajectoryComponent';
 import thoughtworksImage from '../assets/trajectory-icons/tw.png';
-// import { motion } from 'framer-motion';
+import pucrsImage from '../assets/trajectory-icons/pucrs.png';
 
 function HomePage() {
   const myrecords = {
@@ -36,13 +34,20 @@ function HomePage() {
   const sembarreiras = {
     image: semBarreirasImage,
     name: 'Sem Barreiras',
-    position: 'Desenvolvedor front-end - 03/2023 até 06/2023'
+    position: 'Desenvolvedor front-end'
   };
 
   const thoughtworks = {
     image: thoughtworksImage,
     name: 'Thoughtworks',
-    position: 'Jovem Aprendiz na Thoughtworks - 06/2023 até 08/2024'
+    position: 'Jovem Aprendiz na Thoughtworks'
+  }
+
+
+  const pucrs = {
+    image: pucrsImage,
+    name: 'PUCRS',
+    position: 'Bacharelado em Engenharia de Software - Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS) - 01/2023 a 12/2026'
   }
 
   return (
@@ -65,8 +70,10 @@ function HomePage() {
 
         {/* {Trajetória acadêmica e profissional} */}
         <div className='text-white text-center items-center'>
-          <p className='text-6xl'> TRAJETÓRIA ACADÊMICA E PROFISSIONAL </p>
+          <p className='text-6xl'> TRAJETÓRIA </p>
           <div className='flex flex-row justify-center gap-40'>
+          <div className='flex flex-col items-center'>
+            <p> Profissional </p>
             <TrajectoryComponent 
               profile={thoughtworks}
               imageSize="w-[20vh]" // Tamanho personalizado
@@ -74,8 +81,16 @@ function HomePage() {
               bgColor='black'
               borderRadius=''
             />
+            </div>
             <div className='flex flex-col items-center'>
+            <p> Acadêmica </p>
               <TrajectoryComponent profile={sembarreiras} />
+              <TrajectoryComponent 
+                profile={pucrs} 
+                imageSize="w-[15vh]" // Tamanho personalizado
+                border="border-white-500" // Cor da borda
+                bgColor='black'
+                borderRadius=''/>
             </div>
           </div>
         </div>
