@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import HeaderComponent from '../components/HeaderComponent';
 import ProjectFrameComponent from '../components/ProjectFrameComponent';
-import MrImage from '../assets/images/myrecords.png'; // Caminho relativo à imagem local
-import PodioImage from '../assets/images/podio.png'; // Caminho relativo à imagem local
+import MrImage from '../assets/images/myrecords.png';
+import PodioImage from '../assets/images/podio.png';
 import TechIcons from '../components/TechIcons';
-import semBarreirasImage from '../assets/trajectory-icons/sem-barreiras.png'; // Importando a imagem diretamente
+import semBarreirasImage from '../assets/trajectory-icons/sem-barreiras.png';
 import TrajectoryComponent from '../components/TrajectoryComponent';
 import thoughtworksImage from '../assets/trajectory-icons/tw.png';
 import pucrsImage from '../assets/trajectory-icons/pucrs.png';
@@ -43,7 +43,6 @@ function HomePage() {
     position: 'Jovem Aprendiz na Thoughtworks'
   }
 
-
   const pucrs = {
     image: pucrsImage,
     name: 'PUCRS',
@@ -51,67 +50,67 @@ function HomePage() {
   }
 
   return (
-    // Full page
     <div className="bg-[url('https://i.imgur.com/J0sCj2O.jpg')] bg-cover flex flex-col pl-5 pr-5 items-center">
-        {/* // Header definition */}
-        <div className="fixed top-0 left-0 w-full z-10">
-            <HeaderComponent />
-        </div>
-        
-        {/* Landing Page */}
-        <div className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'>
-            <p className="w-[80vh] text-xl text font-thin"> 
-                Estudante do 4º semestre de Engenharia de Software na PUCRS, sou um aspirante a desenvolvedor full-stack com experiência prática em React, React Native e Java. Busco minha primeira experiência profissional como desenvolvedor para aprimorar minhas habilidades e criar soluções eficientes, criativas e escaláveis.
-            </p>
-            <p className='text-8xl pb-10 pl-10'>
-                DIOGO PESSIN CAMARGO
-            </p>
-        </div>
+      
+      {/* Header definition */}
+      <div className="fixed top-0 left-0 w-full z-10">
+          <HeaderComponent />
+      </div>
+      
+      {/* SOBRE MIM - COMPONENTE 1 */}
+      <div id="sobre-mim" className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'>
+          <p className="w-[80vh] text-xl text font-thin"> 
+              Estudante do 4º semestre de Engenharia de Software na PUCRS, sou um aspirante a desenvolvedor full-stack com experiência prática em React, React Native e Java. Busco minha primeira experiência profissional como desenvolvedor para aprimorar minhas habilidades e criar soluções eficientes, criativas e escaláveis.
+          </p>
+          <p className='text-8xl pb-10 pl-10'>
+              DIOGO PESSIN CAMARGO
+          </p>
+      </div>
 
-        {/* {Trajetória acadêmica e profissional} */}
-        <div className='text-white text-center items-center'>
-          <p className='text-6xl'> TRAJETÓRIA </p>
-          <div className='flex flex-row justify-center gap-40'>
+      {/* TRAJETÓRIA ACADEMICA E PROFISSIONAL - COMPONENTE 2*/}
+      <div id="trajetoria" className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'>
+        <p className='text-6xl'> TRAJETÓRIA </p>
+        <div className='flex flex-row justify-center gap-40'>
           <div className='flex flex-col items-center'>
             <p> Profissional </p>
             <TrajectoryComponent 
               profile={thoughtworks}
-              imageSize="w-[20vh]" // Tamanho personalizado
-              border="border-white-500" // Cor da borda
+              imageSize="w-[20vh]"
+              border="border-white-500"
               bgColor='black'
               borderRadius=''
             />
-            </div>
-            <div className='flex flex-col items-center'>
+          </div>
+          <div className='flex flex-col items-center'>
             <p> Acadêmica </p>
             <TrajectoryComponent 
-                profile={pucrs} 
-                imageSize="w-[15vh]" // Tamanho personalizado
-                border="border-white-500" // Cor da borda
-                bgColor='black'
-                borderRadius=''/>
-              <TrajectoryComponent profile={sembarreiras} />
-            </div>
+              profile={pucrs} 
+              imageSize="w-[15vh]"
+              border="border-white-500"
+              bgColor='black'
+              borderRadius=''
+            />
+            <TrajectoryComponent profile={sembarreiras} />
           </div>
         </div>
+      </div>
 
-        {/* Minha trajetória */}
-        <div className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14">
-          <p className='text-8xl pb-9 pl-9'>PROJETOS</p>
-            <div className="flex flex-row h-[60%] w-[150vh] items-center gap-10 md:flex-row md:justify-center">
-                <ProjectFrameComponent project={myrecords} />
-                <ProjectFrameComponent project={podio} />
-            </div>
+      {/* PROJETOS - COMPONENTE 3 */}
+      <div id="projetos" className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14">
+        <p className='text-8xl pb-9 pl-9'>PROJETOS</p>
+        <div className="flex flex-row h-[60%] w-[150vh] items-center gap-10 md:flex-row md:justify-center">
+          <ProjectFrameComponent project={myrecords} />
+          <ProjectFrameComponent project={podio} />
         </div>
+      </div>
 
-
-              {/* Projects Page */}
-        <div className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14">
-          <p className='text-8xl pb-9 pl-9'>Stack de tecnologias</p>
-            <div className="flex flex-row w-[150vh] items-center md:flex-row md:justify-center">
-                <TechIcons />
-            </div>
+      {/* STACK DE TECNOLOGIAS - COMPONENTE 4*/}
+      <div id="tecnologias" className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14">
+        <p className='text-8xl pb-9 pl-9'>Stack de tecnologias</p>
+        <div className="flex flex-row w-[150vh] items-center md:flex-row md:justify-center">
+          <TechIcons />
         </div>
+      </div>
     </div>
   );
 }
