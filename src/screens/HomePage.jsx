@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import HeaderComponent from '../components/HeaderComponent';
 import ProjectFrameComponent from '../components/ProjectFrameComponent';
 import MrImage from '../assets/images/myrecords.png';
@@ -49,6 +49,48 @@ function HomePage() {
     position: 'Bacharelado em Engenharia de Software - Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS) - 01/2023 a 12/2026'
   }
 
+  // Animação de surgimento
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  // Gerenciando a visibilidade de cada seção
+  const [isVisible, setIsVisible] = useState({
+    sobreMim: false,
+    trajetoria: false,
+    projetos: false,
+    tecnologias: false
+  });
+
+  const sectionsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const sectionId = entry.target.id;
+
+        if (entry.isIntersecting) {
+          // Quando a seção entra na viewport, ativa a animação
+          setIsVisible(prev => ({ ...prev, [sectionId]: true }));
+        } else {
+          // Quando a seção sai da viewport, redefine a visibilidade para que a animação possa ocorrer novamente
+          setIsVisible(prev => ({ ...prev, [sectionId]: false }));
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sectionsRef.current.forEach(section => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sectionsRef.current.forEach(section => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
     <div className="bg-[url('https://i.imgur.com/J0sCj2O.jpg')] bg-cover flex flex-col pl-5 pr-5 items-center">
       
@@ -58,7 +100,7 @@ function HomePage() {
       </div>
       
       {/* SOBRE MIM - COMPONENTE 1 */}
-      <div id="sobre-mim" className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'>
+      <div className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'> 
           <p className="w-[80vh] text-xl text font-thin"> 
               Estudante do 4º semestre de Engenharia de Software na PUCRS, sou um aspirante a desenvolvedor full-stack com experiência prática em React, React Native e Java. Busco minha primeira experiência profissional como desenvolvedor para aprimorar minhas habilidades e criar soluções eficientes, criativas e escaláveis.
           </p>
@@ -66,51 +108,73 @@ function HomePage() {
               DIOGO PESSIN CAMARGO
           </p>
       </div>
-
+  
       {/* TRAJETÓRIA ACADEMICA E PROFISSIONAL - COMPONENTE 2*/}
-      <div id="trajetoria" className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'>
+      <motion.div 
+        id="trajetoria" 
+        ref={el => sectionsRef.current[1] = el} // Armazena a referência da seção
+        className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'
+        initial="hidden"
+        animate={isVisible.trajetoria ? "visible" : "hidden"}
+        variants={fadeIn}
+        transition={{ duration: 1.2 }}
+      >
         <p className='text-6xl'> TRAJETÓRIA </p>
         <div className='flex flex-row justify-center gap-40'>
-          <div className='flex flex-col items-center'>
+          <div className='flex flex-col items-center gap-10'>
             <p> Profissional </p>
             <TrajectoryComponent 
               profile={thoughtworks}
               imageSize="w-[20vh]"
-              border="border-white-500"
               bgColor='black'
               borderRadius=''
             />
           </div>
-          <div className='flex flex-col items-center'>
+          <div className='flex flex-col items-center gap-10'>
             <p> Acadêmica </p>
             <TrajectoryComponent 
               profile={pucrs} 
               imageSize="w-[15vh]"
-              border="border-white-500"
               bgColor='black'
               borderRadius=''
             />
             <TrajectoryComponent profile={sembarreiras} />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* PROJETOS - COMPONENTE 3 */}
-      <div id="projetos" className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14">
+      <motion.div 
+        id="projetos" 
+        ref={el => sectionsRef.current[2] = el} // Armazena a referência da seção
+        className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14"
+        initial="hidden"
+        animate={isVisible.projetos ? "visible" : "hidden"}
+        variants={fadeIn}
+        transition={{ duration: 0.6 }}
+      >
         <p className='text-8xl pb-9 pl-9'>PROJETOS</p>
         <div className="flex flex-row h-[60%] w-[150vh] items-center gap-10 md:flex-row md:justify-center">
           <ProjectFrameComponent project={myrecords} />
           <ProjectFrameComponent project={podio} />
         </div>
-      </div>
+      </motion.div>
 
       {/* STACK DE TECNOLOGIAS - COMPONENTE 4*/}
-      <div id="tecnologias" className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14">
+      <motion.div 
+        id="tecnologias" 
+        ref={el => sectionsRef.current[3] = el} // Armazena a referência da seção
+        className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14"
+        initial="hidden"
+        animate={isVisible.tecnologias ? "visible" : "hidden"}
+        variants={fadeIn}
+        transition={{ duration: 0.6 }}
+      >
         <p className='text-8xl pb-9 pl-9'>Stack de tecnologias</p>
         <div className="flex flex-row w-[150vh] items-center md:flex-row md:justify-center">
           <TechIcons />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

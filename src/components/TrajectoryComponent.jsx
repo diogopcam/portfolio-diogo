@@ -5,19 +5,19 @@ const TrajectoryComponent = ({
   imageSize = 'w-24 h-24', 
   border = 'border-white-300', 
   bgColor = 'bg-white', 
-  padding = 'p-4', 
+  padding = 'p-5', 
   shadow = 'shadow-md', 
   borderRadius = 'rounded-full',
   additionalClasses = '' 
 }) => {
   return (
-    <div className={`flex flex-row items-center justify-center ${border} ${padding} ${shadow} gap-8`}>
+    <div className={`flex flex-row items-center justify-center border border-white ${padding} ${shadow} gap-5`}>
       <img 
         src={profile.image} 
         alt={profile.name} 
         className={`${imageSize} ${bgColor} ${borderRadius} ${additionalClasses}`} 
       />
-      <div className='pl-4 w-[50vh] flex text-left flex-col'>
+      <div className='pl-5 w-[50vh] flex text-left flex-col'>
         <p>{profile.name}</p>
         <p>{profile.position}</p>
       </div>
