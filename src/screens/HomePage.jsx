@@ -46,7 +46,7 @@ function HomePage() {
   const pucrs = {
     image: pucrsImage,
     name: 'PUCRS',
-    position: 'Bacharelado em Engenharia de Software - Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS) - 01/2023 a 12/2026'
+    position: 'Bacharelando em Engenharia de Software'
   }
 
   // Animação de surgimento
@@ -102,7 +102,7 @@ function HomePage() {
       {/* SOBRE MIM - COMPONENTE 1 */}
       <div className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'> 
           <p className="w-[80vh] text-xl text font-thin"> 
-              Estudante do 4º semestre de Engenharia de Software na PUCRS, sou um aspirante a desenvolvedor full-stack com experiência prática em React, React Native e Java. Busco minha primeira experiência profissional como desenvolvedor para aprimorar minhas habilidades e criar soluções eficientes, criativas e escaláveis.
+              Estudante do 4º semestre de Engenharia de Software na PUCRS, sou um aspirante a desenvolvedor full-stack com experiência prática em React, React Native e Java. Busco minha primeira experiência profissional como desenvolvedor para aprimorar e amadurecer minhas habilidades e competências como desenvolvedor.
           </p>
           <p className='text-8xl pb-10 pl-10'>
               DIOGO PESSIN CAMARGO
@@ -122,19 +122,17 @@ function HomePage() {
         <p className='text-6xl'> TRAJETÓRIA </p>
         <div className='flex flex-row justify-center gap-40'>
           <div className='flex flex-col items-center gap-10'>
-            <p> Profissional </p>
+            <p className='text-4xl'> Profissional </p>
             <TrajectoryComponent 
               profile={thoughtworks}
-              imageSize="w-[20vh]"
               bgColor='black'
               borderRadius=''
             />
           </div>
           <div className='flex flex-col items-center gap-10'>
-            <p> Acadêmica </p>
+            <p className='text-4xl'> Acadêmica </p>
             <TrajectoryComponent 
               profile={pucrs} 
-              imageSize="w-[15vh]"
               bgColor='black'
               borderRadius=''
             />

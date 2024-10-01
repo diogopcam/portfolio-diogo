@@ -2,7 +2,7 @@ import React from 'react';
 
 const TrajectoryComponent = ({ 
   profile, 
-  imageSize = 'w-24 h-24', 
+  imageSize = 'w-24', 
   border = 'border-white-300', 
   bgColor = 'bg-white', 
   padding = 'p-5', 
@@ -11,7 +11,7 @@ const TrajectoryComponent = ({
   additionalClasses = '' 
 }) => {
   return (
-    <div className={`flex flex-row items-center justify-center border border-white ${padding} ${shadow} gap-5`}>
+    <div className={`rounded flex flex-row items-center justify-center border border-white ${padding} ${shadow} gap-5 w-[100%]`}>
       <img 
         src={profile.image} 
         alt={profile.name} 
