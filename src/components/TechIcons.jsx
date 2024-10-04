@@ -20,13 +20,13 @@ function TechIcons() {
   ];
 
   return (
-    <div className='flex flex-row space-x-4'>
+    <div className='flex flex-row space-x-4 gap-4'>
       {techIcons.map((icon, index) => (
         <img
           key={index}
           src={icon.src}
           alt={icon.alt}
-          className='h-16 w-16 transition-transform transform hover:scale-110'
+          className='h-16 transition-transform transform hover:scale-110'
         />
       ))}
     </div>
