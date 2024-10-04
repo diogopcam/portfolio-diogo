@@ -102,7 +102,7 @@ function HomePage() {
       {/* SOBRE MIM - COMPONENTE 1 */}
       <div className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'> 
           <p className="w-[80vh] text-xl text font-thin"> 
-              Estudante do 4º semestre de Engenharia de Software na PUCRS, sou um aspirante a desenvolvedor full-stack com experiência prática em React, React Native e Java. Busco minha primeira experiência profissional como desenvolvedor para aprimorar e amadurecer minhas habilidades e competências como desenvolvedor.
+              Estudante do 4º semestre de Engenharia de Software na PUCRS, sou um aspirante a desenvolvedor full-stack com experiência prática em React, React Native e Java. Busco minha primeira experiência profissional como desenvolvedor para aprimorar e amadurecer minhas habilidades e competências.
           </p>
           <p className='text-8xl pb-10 pl-10'>
               DIOGO PESSIN CAMARGO
@@ -117,7 +117,7 @@ function HomePage() {
         initial="hidden"
         animate={isVisible.trajetoria ? "visible" : "hidden"}
         variants={fadeIn}
-        transition={{ duration: 1.2 }}
+        transition={{ duration: 1.0 }}
       >
         <p className='text-6xl'> TRAJETÓRIA </p>
         <div className='flex flex-row justify-center gap-40'>
@@ -136,7 +136,9 @@ function HomePage() {
               bgColor='black'
               borderRadius=''
             />
-            <TrajectoryComponent profile={sembarreiras} />
+            <TrajectoryComponent 
+              profile={sembarreiras} 
+            />
           </div>
         </div>
       </motion.div>
@@ -145,14 +147,14 @@ function HomePage() {
       <motion.div 
         id="projetos" 
         ref={el => sectionsRef.current[2] = el} // Armazena a referência da seção
-        className="pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14"
+        className="pt-[12vh] h-[100vh] w-[100%] text-white text-center items-center justify-center flex flex-col gap-14"
         initial="hidden"
         animate={isVisible.projetos ? "visible" : "hidden"}
         variants={fadeIn}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1.0 }}
       >
         <p className='text-8xl pb-9 pl-9'>PROJETOS</p>
-        <div className="flex flex-row h-[60%] w-[150vh] items-center gap-10 md:flex-row md:justify-center">
+        <div className="flex flex-row h-[60%] w-[90%] items-center gap-10 md:flex-row md:justify-center">
           <ProjectFrameComponent project={myrecords} />
           <ProjectFrameComponent project={podio} />
         </div>
@@ -166,7 +168,7 @@ function HomePage() {
         initial="hidden"
         animate={isVisible.tecnologias ? "visible" : "hidden"}
         variants={fadeIn}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1.0 }}
       >
         <p className='text-8xl pb-9 pl-9'>Stack de tecnologias</p>
         <div className="flex flex-row w-[150vh] items-center md:flex-row md:justify-center">
