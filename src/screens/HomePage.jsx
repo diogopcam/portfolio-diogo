@@ -99,7 +99,16 @@ function HomePage() {
           <HeaderComponent />
       </div>
       
-      {/* SOBRE MIM - COMPONENTE 1 */}
+      {/* /* SOBRE MIM - COMPONENTE 1 */ 
+        <motion.div 
+          id="sobre-mim" 
+          ref={el => sectionsRef.current[1] = el} // Armazena a referência da seção
+          className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'
+          initial="hidden"
+          animate={isVisible.trajetoria ? "hidden" : "visible"}
+          variants={fadeIn}
+          transition={{ duration: 1.0 }}
+        >
       <div className='pt-[12vh] h-[100vh] text-white text-center items-center justify-center flex flex-col gap-14'> 
           <p className="w-[80vh] text-xl text font-thin"> 
               Estudante do 4º semestre de Engenharia de Software na PUCRS, sou um aspirante a desenvolvedor full-stack com experiência prática em React, React Native e Java. Busco minha primeira experiência profissional como desenvolvedor para aprimorar e amadurecer minhas habilidades e competências.
@@ -108,8 +117,9 @@ function HomePage() {
               DIOGO PESSIN CAMARGO
           </p>
       </div>
+      </motion.div>
   
-      {/* TRAJETÓRIA ACADEMICA E PROFISSIONAL - COMPONENTE 2*/}
+      /* TRAJETÓRIA ACADEMICA E PROFISSIONAL - COMPONENTE 2*/}
       <motion.div 
         id="trajetoria" 
         ref={el => sectionsRef.current[1] = el} // Armazena a referência da seção
