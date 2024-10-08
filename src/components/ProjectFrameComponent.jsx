@@ -16,7 +16,6 @@ function ProjectFrameComponent({ project }) {
       <div className="absolute text-start justify-around text-white inset-0 bg-black bg-opacity-70 p-4 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col">
         <h2 className="text-2xl font-bold">{project.name}</h2>
         <p className="mt-2">{project.description}</p>
-
       <div>
         <p className="text-white"> Tecnologias utilizadas </p>
       </div>
